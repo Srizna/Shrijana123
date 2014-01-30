@@ -1,5 +1,11 @@
 package Lab1;
 
+
+/**
+ * This class displays the temperatures from 0 degrees Celsius to 100 degrees Celsius and its Fahrenheit equivalent.
+ * @author srizna
+ *
+ */
 public class CelsiusToFahrenheit {
 	public static void main(String[] arg){
 		for(int i=0; i<=100; i++){
