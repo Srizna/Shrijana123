@@ -62,6 +62,7 @@ public class DisplayName {
 
 	/**
 	 * This method checks for validation of  email.
+	 * @author srizna
 	 * @param email:the input as email.
 	 * @return: true if valid email,false if invalid.
 	 */
@@ -82,8 +83,8 @@ public class DisplayName {
 
 	/**
 	 * This method splits the complete name given by user and stored it into {@link Array} of type {@link String}
-	 * @return: the splited name as {@link Array} of type {@link String}.
 	 * @author srizna
+	 * @return: the splited name as {@link Array} of type {@link String}.
 	 */
 	public String[] splitName() {
 		fullname = initial +" "+first_name +" "+last_name;
@@ -144,9 +145,9 @@ public class DisplayName {
 
 	/**
 	 * This method takes the {@link String} argument and calculates the length of provided parameter
-	 * @param name_type: the name passed as argument.
-	 * @return:the integer value. 
 	 * @author srizna
+	 * @param name_type: the name passed as argument.
+	 * @return:the length of type integer. 
 	 */
 	private int namelength(String name_type) {
 		// TODO Auto-generated method stub

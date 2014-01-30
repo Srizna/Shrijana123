@@ -31,11 +31,11 @@ public class Calculator {
 	}
 
 	/**
-	 * 
+	 * This method takes three integer as parameter and perform the operations.
+	 * @author srizna
 	 * @param first:user's first input number
 	 * @param second:user's second input number
 	 * @param a:user's choice of operation
-	 *  @author srizna
 	 */
 
 	private static void operation(int first, int second, int a) {

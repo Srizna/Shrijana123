@@ -14,7 +14,7 @@ public class Palindrome {
 	
 
 	/**
-	 * This method takes the user's input
+	 * This method takes the user's name as input
 	 * @author srizna
 	 */
 	private static void enterNumber() {
@@ -31,9 +31,9 @@ public class Palindrome {
 	
 	/**
 	 * This method firstly checks for length of given number whether its five digits or not and then checks for Palindrome.
+	 * @author srizna
 	 * @param entered_number:user's five digits integer value
 	 * @param temp:temporary value to store given input so that to compare it later.
-	 * @author srizna
 	 */
 	private static void checkForPalindrome(int entered_number, int temp) {
 		// TODO Auto-generated method stub
@@ -57,9 +57,9 @@ public class Palindrome {
 
 	/**
 	 * This method displays whether the given input is palindrome or not.
+	 * @author srizna
 	 * @param sum:final stored value
 	 * @param temp:temporary stored value
-	 * @author srizna
 	 */
 	private static void display(int sum, int temp) {
 		// TODO Auto-generated method stub
