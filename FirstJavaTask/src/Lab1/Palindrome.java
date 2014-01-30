@@ -2,7 +2,39 @@ package Lab1;
 
 import java.util.Scanner;
 
+
+/**
+ * This Palindrome class takes five digits integer value from user and determines whether it is Palindrome or not.
+ * If user inputs number less than five digits number it ask for next valid input.
+ * @author srizna
+ *
+ */
+
 public class Palindrome {
+	
+
+	/**
+	 * This method takes the user's input
+	 * @author srizna
+	 */
+	private static void enterNumber() {
+		// TODO Auto-generated method stub
+		int entered_number;
+		int temp;
+		int sum = 0;
+		System.out.println("Enter 5 digits number:");
+		Scanner number = new Scanner(System.in);
+		entered_number = number.nextInt();
+		temp = entered_number;
+		checkForPalindrome(entered_number, temp);
+	}
+	
+	/**
+	 * This method firstly checks for length of given number whether its five digits or not and then checks for Palindrome.
+	 * @param entered_number:user's five digits integer value
+	 * @param temp:temporary value to store given input so that to compare it later.
+	 * @author srizna
+	 */
 	private static void checkForPalindrome(int entered_number, int temp) {
 		// TODO Auto-generated method stub
 		int remainder;
@@ -21,19 +53,14 @@ public class Palindrome {
 			enterNumber();
 		}
 	}
+	
 
-	private static void enterNumber() {
-		// TODO Auto-generated method stub
-		int entered_number;
-		int temp;
-		int sum = 0;
-		System.out.println("Enter 5 digits number:");
-		Scanner number = new Scanner(System.in);
-		entered_number = number.nextInt();
-		temp = entered_number;
-		checkForPalindrome(entered_number, temp);
-	}
-
+	/**
+	 * This method displays whether the given input is palindrome or not.
+	 * @param sum:final stored value
+	 * @param temp:temporary stored value
+	 * @author srizna
+	 */
 	private static void display(int sum, int temp) {
 		// TODO Auto-generated method stub
 		if (sum == temp) {
@@ -45,7 +72,7 @@ public class Palindrome {
 		}
 	}
 
-	public static void main(String[] arg) {
+		public static void main(String[] arg) {
 
 		enterNumber();
 	}

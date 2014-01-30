@@ -2,6 +2,14 @@ package Lab2;
 
 import java.util.Scanner;
 
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
+
+
+/**
+ * This DisplayName class takes the complete name and email as {@link String} from user checks for email
+ * @author srizna
+ *
+ */
 public class DisplayName {
 	String initial;
 	String first_name;
@@ -10,7 +18,11 @@ public class DisplayName {
 	String fullname;
 	private int choice;
 	String[] name;
+	
 
+	/**
+	 * This method takes user's email.
+	 */
 	public void enterEmail() {
 		System.out.println("Enter your valid email:");
 		Scanner mail = new Scanner(System.in);
@@ -21,7 +33,11 @@ public class DisplayName {
 			enterEmail();
 		}
 	}
+	
 
+	/**
+	 * This method takes the user's input.
+	 */
 	public void enterInputName() {
 		System.out.println("Enter your initial:Mr/Ms/Mrs");
 		Scanner init = new Scanner(System.in);
@@ -44,6 +60,11 @@ public class DisplayName {
 		}
 	}
 
+	/**
+	 * This method checks for validation of  email.
+	 * @param email:the input as email.
+	 * @return: true if valid email,false if invalid.
+	 */
 	private boolean checkEmail(String email) {
 		// TODO Auto-generated method stub
 		if (email
@@ -59,6 +80,11 @@ public class DisplayName {
 	
 	
 
+	/**
+	 * This method splits the complete name given by user and stored it into {@link Array} of type {@link String}
+	 * @return: the splited name as {@link Array} of type {@link String}.
+	 * @author srizna
+	 */
 	public String[] splitName() {
 		fullname = initial +" "+first_name +" "+last_name;
 		name = fullname.split(" ");
@@ -67,6 +93,10 @@ public class DisplayName {
 	}
 	
 
+	/**
+	 * This method provides option to the users to perform different operations.
+	 * 
+	 */
 	public void chooseOption() {
 		String[] singlename=splitName(); 
 		System.out.println("Enter the number to view your name separately:"
@@ -82,7 +112,6 @@ public class DisplayName {
 		case 1:
 			System.out.println(fullname);
 			
-
 			break;
 		
 		 case 2: 
@@ -113,6 +142,12 @@ public class DisplayName {
 		}
 	}
 
+	/**
+	 * This method takes the {@link String} argument and calculates the length of provided parameter
+	 * @param name_type: the name passed as argument.
+	 * @return:the integer value. 
+	 * @author srizna
+	 */
 	private int namelength(String name_type) {
 		// TODO Auto-generated method stub
 		int full_length=name_type.length();
