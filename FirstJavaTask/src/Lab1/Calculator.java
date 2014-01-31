@@ -3,6 +3,8 @@ package Lab1;
 import java.util.Scanner;
 
 /**
+ * This class takes two integer values and perform basic mathematical
+ * calculation as the user's input option and Returns integer value.
  * 
  * @author srizna
  * 
@@ -31,7 +33,9 @@ public class Calculator {
 	}
 
 	/**
+	 * This method takes three integer as parameter and perform the operations.
 	 * 
+	 * @author srizna
 	 * @param first
 	 *            :user's first input number
 	 * @param second
@@ -40,10 +44,10 @@ public class Calculator {
 	 *            :user's choice of operation
 	 */
 
-	private static void operation(int first, int second, int a) {
+	private static void operation(int first, int second, int option_choosen) {
 		// TODO Auto-generated method stub
 
-		switch (a) {
+		switch (option_choosen) {
 		case 1:
 			System.out.println("Sum of" + " " + first + "and" + " " + second
 					+ "" + "is" + (first + second));
@@ -69,7 +73,7 @@ public class Calculator {
 			break;
 		default:
 			System.out.println("Press valid Choice");
-			Scanner repeatchoice = new Scanner(System.in);
+			Scanner repeatchoice = new Scanner(System.in); // Ask for valid Choice of operation to perform.
 			int repeat = repeatchoice.nextInt();
 
 			operation(first, second, repeat);

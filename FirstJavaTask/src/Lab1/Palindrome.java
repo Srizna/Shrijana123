@@ -2,11 +2,47 @@ package Lab1;
 
 import java.util.Scanner;
 
+
+/**
+ * This Palindrome class takes five digits integer value from user and determines whether it is Palindrome or not.
+ * If user inputs the number less than five digits number it ask for next valid input.
+ * @author srizna
+ *
+ */
+
 public class Palindrome {
+	
+
+	/**
+	 * This method reads the five digits integer value from user.
+	 * @author srizna
+	 */
+	
+	private static void enterNumber() {
+		// TODO Auto-generated method stub
+		int entered_number;
+		int temp;
+		int sum = 0;
+		
+		System.out.println("Enter 5 digits number:");
+		Scanner number = new Scanner(System.in);
+		entered_number = number.nextInt();
+		temp = entered_number;
+		
+		checkForPalindrome(entered_number, temp);	// method call to check for palindrome
+	}
+	
+	/**
+	 * This method firstly checks for length of given number whether its five digits or not and then checks for Palindrome.
+	 * @author srizna
+	 * @param entered_number:user's input of five digits integer value
+	 * @param temp:temporary value to store given input so that to compare it later.
+	 */
 	private static void checkForPalindrome(int entered_number, int temp) {
 		// TODO Auto-generated method stub
 		int remainder;
 		int sum = 0;
+		
 		if (entered_number > 10000 && entered_number < 99999) {
 
 			for (int i = 0; i < 5; i++) {
@@ -21,19 +57,14 @@ public class Palindrome {
 			enterNumber();
 		}
 	}
+	
 
-	private static void enterNumber() {
-		// TODO Auto-generated method stub
-		int entered_number;
-		int temp;
-		int sum = 0;
-		System.out.println("Enter 5 digits number:");
-		Scanner number = new Scanner(System.in);
-		entered_number = number.nextInt();
-		temp = entered_number;
-		checkForPalindrome(entered_number, temp);
-	}
-
+	/**
+	 * This method displays whether the given input is palindrome or not.
+	 * @author srizna
+	 * @param sum:final stored value
+	 * @param temp:temporary stored value
+	 */
 	private static void display(int sum, int temp) {
 		// TODO Auto-generated method stub
 		if (sum == temp) {
@@ -45,7 +76,7 @@ public class Palindrome {
 		}
 	}
 
-	public static void main(String[] arg) {
+		public static void main(String[] arg) {
 
 		enterNumber();
 	}

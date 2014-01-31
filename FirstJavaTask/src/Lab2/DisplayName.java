@@ -2,6 +2,15 @@ package Lab2;
 
 import java.util.Scanner;
 
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
+
+
+/**
+ * This DisplayName class contains multiple methods which takes the complete name and email as {@link String} from user and then checks for email.
+ * It shows the use of methods of {@link String} Class.
+ * @author srizna
+ *
+ */
 public class DisplayName {
 	String initial;
 	String first_name;
@@ -10,7 +19,12 @@ public class DisplayName {
 	String fullname;
 	private int choice;
 	String[] name;
+	
 
+	/**
+	 * This method takes user's email.
+	 * @author srizna
+	 */
 	public void enterEmail() {
 		System.out.println("Enter your valid email:");
 		Scanner mail = new Scanner(System.in);
@@ -18,10 +32,15 @@ public class DisplayName {
 		if (checkEmail(email)) {
 			System.out.println("valid");
 		} else {
-			enterEmail();
+			enterEmail();	// recall the method if email is not valid.
 		}
 	}
+	
 
+	/**
+	 * This method takes the user's complete name as input.
+	 * @author srizna
+	 */
 	public void enterInputName() {
 		System.out.println("Enter your initial:Mr/Ms/Mrs");
 		Scanner init = new Scanner(System.in);
@@ -40,16 +59,22 @@ public class DisplayName {
 
 		} else {
 			System.out.println("invalid");
-			enterInputName();
+			enterInputName();	//recall the method if the initial input is invalid.
 		}
 	}
 
+	/**
+	 * This method checks for validation of  email.
+	 * @author srizna
+	 * @param email:user's email.
+	 * @return: true if valid email,false if invalid.
+	 */
 	private boolean checkEmail(String email) {
 		// TODO Auto-generated method stub
-		if (email
-				.matches("\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b"))
+		if (email.matches("\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b")){
+			
 			return true;
-		else {
+		}else {
 
 			return false;
 		}
@@ -59,6 +84,11 @@ public class DisplayName {
 	
 	
 
+	/**
+	 * This method splits the complete name given by user and stored it into {@link Array} of type {@link String}
+	 * @author srizna
+	 * @return: the splited name as {@link Array} of type {@link String}.
+	 */
 	public String[] splitName() {
 		fullname = initial +" "+first_name +" "+last_name;
 		name = fullname.split(" ");
@@ -67,6 +97,10 @@ public class DisplayName {
 	}
 	
 
+	/**
+	 * This method provides option to the users to perform different operations.
+	 * 
+	 */
 	public void chooseOption() {
 		String[] singlename=splitName(); 
 		System.out.println("Enter the number to view your name separately:"
@@ -82,7 +116,6 @@ public class DisplayName {
 		case 1:
 			System.out.println(fullname);
 			
-
 			break;
 		
 		 case 2: 
@@ -113,6 +146,12 @@ public class DisplayName {
 		}
 	}
 
+	/**
+	 * This method takes the {@link String} argument and calculates the length of provided parameter
+	 * @author srizna
+	 * @param name_type: the name passed as argument.
+	 * @return:the length of type integer. 
+	 */
 	private int namelength(String name_type) {
 		// TODO Auto-generated method stub
 		int full_length=name_type.length();
@@ -120,7 +159,7 @@ public class DisplayName {
 	}
 
 	public static void main(String[] arg) {
-		DisplayName obj = new DisplayName();
+		DisplayName obj = new DisplayName();	//object created to access methods of the classes.
 		obj.enterInputName();
 		obj.chooseOption();
 		
