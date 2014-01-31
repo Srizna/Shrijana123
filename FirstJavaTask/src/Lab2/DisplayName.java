@@ -159,7 +159,7 @@ public class DisplayName {
 	}
 
 	public static void main(String[] arg) {
-		DisplayName obj = new DisplayName();
+		DisplayName obj = new DisplayName();	//object created to access methods of the classes.
 		obj.enterInputName();
 		obj.chooseOption();
 		
