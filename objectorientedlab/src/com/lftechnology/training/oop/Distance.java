@@ -79,12 +79,12 @@ public class Distance {
 	public static void main(String[] arg) {
 		Distance obj1 = new Distance();
 		obj1.setFeet(14);
-		obj1.setInches(0);
+		obj1.setInches(9);
 		obj1.display();
 
 		Distance obj2 = new Distance();
 		obj2.setFeet(15);
-		obj2.setInches(2.3f);
+		obj2.setInches(5.3f);
 		obj2.display();
 		obj1.addDistance(obj2);
 		obj1.compareDistance(obj2);

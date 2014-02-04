@@ -65,10 +65,10 @@ public class Time {
 	 *            :time
 	 */
 	public void addTime(Time time) {
-
-		this.seconds = seconds + time.seconds;
-		this.minutes = minutes + time.minutes;
-		this.hours = hours + time.hours;
+		
+		this.seconds += time.seconds;
+		this.minutes += time.minutes;
+		this.hours += time.hours;
 
 		if (seconds >= 60) {
 			minutes = minutes+seconds / 60;

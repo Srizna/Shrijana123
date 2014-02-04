@@ -38,7 +38,7 @@ public class GuessingNumberGame {
 		if (number == 0) {
 			System.out.println("Thank you...");
 			System.exit(0);
-		} else if (number <= 100 & number >= 1) {
+		} else if (number <= 100 && number >= 1) {
 			attemptCounter++;
 			Random randomNumber = new Random();
 			int randomValue = randomNumber.nextInt(10) + 1;
@@ -78,7 +78,7 @@ public class GuessingNumberGame {
 				System.out.println("Thank you..");
 			}
 				else{
-					System.out.println("press valid number");
+					System.out.println("press valid number to continue Game");
 					repeatNumber= userInput.nextInt();
 				
 			}}catch(InputMismatchException e){
