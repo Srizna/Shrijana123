@@ -66,21 +66,17 @@ public class Time {
 	 */
 	public void addTime(Time time) {
 
-		seconds = seconds + time.seconds;
-		minutes = minutes + time.minutes;
-		hours = hours + time.hours;
+		this.seconds = seconds + time.seconds;
+		this.minutes = minutes + time.minutes;
+		this.hours = hours + time.hours;
 
 		if (seconds >= 60) {
-			minutes = seconds / 60;
-			System.out.println(minutes);
+			minutes = minutes+seconds / 60;
 			seconds = seconds % 60;
-			System.out.println(seconds);
 		}
 		if (minutes >= 60) {
-			hours = minutes / 60;
-			System.out.println(hours);
+			hours = hours+minutes / 60;
 			minutes = minutes % 60;
-			System.out.println(minutes);
 		}
 		System.out.println("Total Time is " + hours + ":" + minutes + ":"
 				+ seconds);

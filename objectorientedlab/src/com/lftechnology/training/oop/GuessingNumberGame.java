@@ -1,5 +1,6 @@
 package com.lftechnology.training.oop;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,6 +18,7 @@ import java.util.Scanner;
 public class GuessingNumberGame {
 	int number;
 	int attemptCounter = 0;
+	Scanner userInput = new Scanner(System.in);
 
 	/**
 	 * This method reads the {@link Integer} value ranges from 1-100.
@@ -24,12 +26,12 @@ public class GuessingNumberGame {
 	 * @author srizna
 	 */
 	public void enterNumber() {
-		Scanner userInput = new Scanner(System.in);
+		
 		System.out
 				.println("Enter the number ranges from 1-100 Or Press 0 to exit:");
 		try {
 			number = userInput.nextInt();
-		} catch (Exception e) {
+		} catch (InputMismatchException e) {
 			System.out.println("Enter valid number....");
 			enterNumber();
 		}
@@ -39,7 +41,7 @@ public class GuessingNumberGame {
 		} else if (number <= 100 & number >= 1) {
 			attemptCounter++;
 			Random randomNumber = new Random();
-			int randomValue = randomNumber.nextInt(100) + 1;
+			int randomValue = randomNumber.nextInt(10) + 1;
 			System.out.println(randomValue);
 			checkNumber(number, randomValue);
 		} else {
@@ -60,11 +62,30 @@ public class GuessingNumberGame {
 	 *            :the generated random number.
 	 */
 	private void checkNumber(int number, int value) {
+		int repeatNumber;
 		if (number == value) {
 			System.out.println("Entered number: " + number + "\t"
 					+ "Random number generated: " + value);
 			System.out.println("Number of attempts: " + attemptCounter);
 			System.out.println("Entered number and Random number matched. ");
+			System.out.println("Want to Play again? Press 1 else 0:");
+			try{
+				repeatNumber= userInput.nextInt();
+			
+			if(repeatNumber==1){
+				enterNumber();
+			}else if(repeatNumber==0){
+				System.out.println("Thank you..");
+			}
+				else{
+					System.out.println("press valid number");
+					repeatNumber= userInput.nextInt();
+				
+			}}catch(InputMismatchException e){
+				System.out.println("press valid input");
+				
+			}
+			
 		} else {
 			enterNumber();
 		}

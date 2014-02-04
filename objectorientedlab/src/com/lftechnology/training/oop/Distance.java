@@ -45,7 +45,7 @@ public class Distance {
 	 * @param dis:Class object
 	 */
 	public void addDistance(Distance dis) {
-		double totalFeet = dis.feet + this.feet;
+		int totalFeet = dis.feet + this.feet;
 		float totalInches = dis.inches + this.inches;
 		if(totalInches>=12){
 		int temp= (int)(totalInches%12);
@@ -64,7 +64,7 @@ public class Distance {
 	 * @param dis:object of class.
 	 */
 	public void compareDistance(Distance dis) {
-		if (dis.feet < this.feet || dis.inches < this.inches) {
+		if (dis.feet <= this.feet || dis.inches <= this.inches) {
 			System.out.println("First distance is greater " + dis.feet + "ft "
 					+ dis.inches + "in" + " < " + this.feet + "ft "
 					+ this.inches + "in ");
@@ -84,7 +84,7 @@ public class Distance {
 
 		Distance obj2 = new Distance();
 		obj2.setFeet(15);
-		obj2.setInches(90);
+		obj2.setInches(2.3f);
 		obj2.display();
 		obj1.addDistance(obj2);
 		obj1.compareDistance(obj2);
