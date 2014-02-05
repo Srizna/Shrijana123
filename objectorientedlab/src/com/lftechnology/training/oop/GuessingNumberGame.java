@@ -19,6 +19,7 @@ public class GuessingNumberGame {
 	int number;
 	int attemptCounter = 0;
 	Scanner userInput = new Scanner(System.in);
+	static int randomValue=0;
 
 	/**
 	 * This method reads the {@link Integer} value ranges from 1-100.
@@ -35,16 +36,15 @@ public class GuessingNumberGame {
 			System.out.println("Enter valid number....");
 			enterNumber();
 		}
+		
+		
 		if (number == 0) {
 			System.out.println("Thank you...");
 			System.exit(0);
 		} else if (number <= 100 && number >= 1) {
 			attemptCounter++;
-			Random randomNumber = new Random();
-			int randomValue = randomNumber.nextInt(10) + 1;
-			System.out.println(randomValue);
 			checkNumber(number, randomValue);
-		} else {
+			} else {
 			System.out
 					.println("Invalid number.Please enter number within range");
 			enterNumber();
@@ -73,6 +73,7 @@ public class GuessingNumberGame {
 				repeatNumber= userInput.nextInt();
 			
 			if(repeatNumber==1){
+				generateRandomNumber();
 				enterNumber();
 			}else if(repeatNumber==0){
 				System.out.println("Thank you..");
@@ -91,9 +92,19 @@ public class GuessingNumberGame {
 		}
 
 	}
+	/**
+	 * This method generate the random number ranges from 1-15.
+	 * @author srizna
+	 */
+	public void generateRandomNumber(){
+		Random randomNumber = new Random();
+		randomValue = randomNumber.nextInt(15) + 1;
+		
+	}
 
 	public static void main(String[] arg) {
 		GuessingNumberGame obj = new GuessingNumberGame();
+		obj.generateRandomNumber();
 		obj.enterNumber();
 
 	}
