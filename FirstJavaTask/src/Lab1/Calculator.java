@@ -3,7 +3,7 @@ package Lab1;
 import java.util.Scanner;
 
 /**
- * 
+ * This class takes two integer values and perform basic mathematical calculation as the user's input option and Returns integer value.
  * @author srizna
  * 
  */
@@ -31,13 +31,11 @@ public class Calculator {
 	}
 
 	/**
-	 * 
-	 * @param first
-	 *            :user's first input number
-	 * @param second
-	 *            :user's second input number
-	 * @param a
-	 *            :user's choice of operation
+	 * This method takes three integer as parameter and perform the operations.
+	 * @author srizna
+	 * @param first:user's first input number
+	 * @param second:user's second input number
+	 * @param a:user's choice of operation
 	 */
 
 	private static void operation(int first, int second, int a) {
