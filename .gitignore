@@ -1,0 +1,10 @@
+#ignore files
+*.class
+*.project
+*.classpath
+
+
+#ignore folder
+bin
+.settings
+
