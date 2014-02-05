@@ -76,11 +76,10 @@ public class Palindrome {
 	 */
 	private static void display(int sum, int temp) {
 		if (sum == temp) {
-			System.out.println("The number" + " " + temp + " "
-					+ "is PALINDROME");
+			System.out.println("The number "  + temp + " is PALINDROME");
 		} else {
-			System.out.println("The number " + temp + " "
-					+ "is not  PALINDROME");
+			System.out.println("The number " + temp 
+					+ " is not  PALINDROME");
 		}
 	}
 
