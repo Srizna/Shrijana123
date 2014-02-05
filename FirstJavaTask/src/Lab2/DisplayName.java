@@ -6,7 +6,8 @@ import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 
 /**
- * This DisplayName class takes the complete name and email as {@link String} from user checks for email
+ * This DisplayName class contains multiple methods which takes the complete name and email as {@link String} from user and then checks for email.
+ * It shows the use of methods of {@link String} Class.
  * @author srizna
  *
  */
@@ -22,6 +23,7 @@ public class DisplayName {
 
 	/**
 	 * This method takes user's email.
+	 * @author srizna
 	 */
 	public void enterEmail() {
 		System.out.println("Enter your valid email:");
@@ -30,13 +32,14 @@ public class DisplayName {
 		if (checkEmail(email)) {
 			System.out.println("valid");
 		} else {
-			enterEmail();
+			enterEmail();	// recall the method if email is not valid.
 		}
 	}
 	
 
 	/**
-	 * This method takes the user's input.
+	 * This method takes the user's complete name as input.
+	 * @author srizna
 	 */
 	public void enterInputName() {
 		System.out.println("Enter your initial:Mr/Ms/Mrs");
@@ -56,22 +59,22 @@ public class DisplayName {
 
 		} else {
 			System.out.println("invalid");
-			enterInputName();
+			enterInputName();	//recall the method if the initial input is invalid.
 		}
 	}
 
 	/**
 	 * This method checks for validation of  email.
 	 * @author srizna
-	 * @param email:the input as email.
+	 * @param email:user's email.
 	 * @return: true if valid email,false if invalid.
 	 */
 	private boolean checkEmail(String email) {
 		// TODO Auto-generated method stub
-		if (email
-				.matches("\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b"))
+		if (email.matches("\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b")){
+			
 			return true;
-		else {
+		}else {
 
 			return false;
 		}
@@ -156,7 +159,7 @@ public class DisplayName {
 	}
 
 	public static void main(String[] arg) {
-		DisplayName obj = new DisplayName();
+		DisplayName obj = new DisplayName();	//object created to access methods of the classes.
 		obj.enterInputName();
 		obj.chooseOption();
 		
